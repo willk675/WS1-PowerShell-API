@@ -9,6 +9,34 @@
 	.DESCRIPTION
 		Powershell cmdlets to do all the things I want to do in WS1 without touching the console.
 		A.K.A - my own personal GOD MODE. 
+
+		----- Command List -----
+		Set-WS1APIheader
+			- Use to set your console and credentials
+		Test-WS1APIheader
+			- Use to test you can connect to your console
+		Clear-WS1APIheader
+			- Use to clear the API headers to prevent unwanted access. 
+		Get-WS1Device
+			- Use to get device info from the console
+		Delete-WS1Device
+			- Use to delete device. 
+
+	.NOTES
+		----- Usage -----
+		Import-module WS1_PSModule.psm
+		Set-WS1APIheader 
+		Test-WS1APIheader
+		Get-WS1Device -SerialNumber <SerialNumber>
+		Delete-WS1Device -Serial <SerialNumber>
+			- Will Delete single device & create a CSV with the device info pulled from console. 
+		Delete-WS1Device -importcsv <path to CSV file>
+			- Should contain Device Serial Numbers under the column header "SerialNumber"
+			- Sill get device details from console, will output a gridview to allow you to select which device you want to delete.
+				-- If running from PWSH on macOS device Comment out line #130 to remove this.
+			- Will create two CSVs in path of input file. One of deleted files, one of devices not found. 
+		Clear-WS1APIheader
+		
 #>
 
 
