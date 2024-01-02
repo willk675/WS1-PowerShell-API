@@ -126,7 +126,7 @@ function Delete-WS1Device
 				This does not work in powershell on Mac. Thus is commented out for testing. 
 				Uncomment and remove  line of '$deletelist = DeviceList'
 			#>
-			#$DeleteList = $DeviceList | Out-GridView -PassThru -Title "Please select which Devices to Process, you can CTRL+Click or Select All, click OKAY to process."
+			$DeleteList = $DeviceList | Out-GridView -PassThru -Title "Please select which Devices to Process, you can CTRL+Click or Select All, click OKAY to process."
 			$DeleteList = $DeviceList
 			
 			$DeleteTotal = $DeleteList.Count
